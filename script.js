@@ -123,6 +123,8 @@
         // COLLECT RSVP INFORMATION
         // ======================================
 
+        const questions = questionsByName[celebrant];
+
         const payload = {
             celebrant: celebrant,
             guest_email: guestEmail,
@@ -132,9 +134,12 @@
             time: '8:00 PM',
             location: 'Rockstar Glorietta',
 
-            question_1: document.getElementById('q1').value.trim(),
-            question_2: document.getElementById('q2').value.trim(),
-            question_3: document.getElementById('q3').value.trim(),
+            q_1: questions[0],
+            q_2: questions[1],
+            q_3: questions[2],
+            a_1: document.getElementById('q1').value.trim(),
+            a_2: document.getElementById('q2').value.trim(),
+            a_3: document.getElementById('q3').value.trim(),
 
             to_email: guestEmail
         };
