@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <title>Llara & Rizia | A Birthday Invitation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+    :root{--purple:#502377;--deep:#3c195c;--lavender:#a786ea;--pink:#f43f75;--butter:#ffd055;--cream:#fffaf4;--ink:#5a3974;--line:#ead6f4}
+    *{box-sizing:border-box} html{min-height:100%;background:#fff3f7}body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--deep);min-height:100svh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 16% 15%,#f8ddec 0,transparent 39%),radial-gradient(ellipse at 88% 80%,#e7d8ff 0,transparent 38%),#fff8f5}
+    button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--lavender);outline-offset:3px}
+    .app{position:relative;width:min(100%,480px);min-height:min(750px,calc(100svh - 44px));border:3px solid #6d4490;border-radius:28px;overflow:hidden;background:var(--cream);box-shadow:0 22px 70px rgba(83,29,100,.16),inset 0 0 0 7px white;isolation:isolate}
+    .app:before{content:"";position:absolute;inset:8px;border:1px solid rgba(153,99,185,.24);border-radius:19px;pointer-events:none;z-index:8}
+    .bunting{position:absolute;top:0;left:0;right:0;width:100%;height:95px;pointer-events:none;z-index:4}
+    .topline{position:absolute;z-index:2;top:103px;width:100%;text-align:center;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#b58cbd;font-weight:800}
+    .balloon{position:absolute;width:53px;height:67px;border-radius:53% 50% 52% 51%;z-index:1;box-shadow:inset -8px -5px 0 rgba(0,0,0,.08),inset 8px 8px 0 rgba(255,255,255,.16);pointer-events:none}
+    .balloon:before{content:"";position:absolute;bottom:-7px;left:22px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid currentColor}
+    .balloon:after{content:"";position:absolute;top:100%;left:26px;width:1.3px;height:93px;background:#765273;transform:rotate(-11deg);transform-origin:top}
+    .balloon.red{background:#f24172;color:#f24172}.balloon.lilac{background:#9472e8;color:#9472e8}.b1{top:112px;left:-28px;transform:rotate(-12deg)}.b2{top:204px;left:0;transform:scale(.79) rotate(10deg)}.b3{top:117px;right:-20px;transform:rotate(8deg)}.b4{top:220px;right:-29px;transform:scale(.76)}
+    .scribble{position:absolute;pointer-events:none;font-size:32px;color:#a47be4;z-index:1;line-height:1}.s1{left:23px;top:370px;transform:rotate(-15deg)}.s2{right:20px;bottom:126px;transform:rotate(18deg)}.s3{left:24px;bottom:28px;color:var(--pink)}
+    .star{position:absolute;z-index:1;pointer-events:none;font-size:21px}.st1{color:#ffca43;right:37px;top:350px}.st2{color:#e64a7c;left:32px;bottom:68px}.st3{color:#a67deb;right:35px;bottom:40px}.st4{color:#ffd34e;left:60px;top:298px}
+    .cake{width:86px;height:74px;filter:drop-shadow(0px 4px 0 rgba(91,46,114,.06))}.cake.small{width:60px;height:52px}
+    .cake-bottom{position:absolute;right:15px;bottom:8px;transform:rotate(-12deg);opacity:.97;z-index:1;pointer-events:none}.cake-top{position:absolute;left:30px;top:64px;transform:rotate(-10deg);z-index:2;pointer-events:none}
+    .screen{position:relative;z-index:3;display:none;min-height:690px;padding:143px 39px 87px;align-items:center;flex-direction:column;text-align:center;animation:popin .4s ease both}.screen.active{display:flex}
+    @keyframes popin{from{opacity:0;transform:translateY(11px)}to{opacity:1;transform:translateY(0)}}
+    .eyebrow{font-size:11px;letter-spacing:.23em;font-weight:800;text-transform:uppercase;color:#9169aa;margin:0 0 15px}
+    h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:-.045em;line-height:1.06;color:var(--purple);margin:0}
+    h1{font-size:clamp(43px,9vw,56px)}h1 .fine{display:block;font-size:.64em;line-height:1.14;letter-spacing:-.037em;margin:7px 0 0}h2{font-size:clamp(40px,9.5vw,55px)}
+    .subtitle{font-size:14px;line-height:1.55;margin:22px 0 22px;color:var(--ink);max-width:250px}.pill-list{width:100%;max-width:284px;display:grid;gap:8px;margin:3px auto 22px}
+    .detail{display:flex;align-items:center;gap:13px;text-align:left;padding:9px 18px;background:linear-gradient(100deg,#f8eaf6,#f0e4fb);border-radius:100px;font-size:14px;font-weight:800}.detail svg{width:19px;height:19px;stroke:var(--purple);fill:none;stroke-width:2.1}
+    .primary{border:0;color:white;background:linear-gradient(135deg,#6f3a94,#4b226f);box-shadow:inset 0 0 0 2px rgba(255,255,255,.15),0 6px 0 #3b1759,0 10px 21px rgba(90,36,123,.2);border-radius:200px;min-height:55px;padding:0 25px;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:13px;transition:transform .18s,box-shadow .18s;white-space:nowrap}.primary:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.15),0 8px 0 #3b1759,0 12px 22px rgba(90,36,123,.23)}.primary:active{transform:translateY(3px);box-shadow:0 2px 0 #3b1759}.primary:disabled{opacity:.65;cursor:wait}.button-arrow{font-size:24px;font-weight:400;line-height:1}
+    #welcome .primary{margin-top:12px;width:100%;max-width:284px}#welcome .subtitle{margin-top:21px}
+    #choose h2{margin:15px 0 42px}#choose .option{width:100%;border:1px solid #edd2f3;background:linear-gradient(95deg,#fce8f3,#f7e6f6);border-radius:28px;min-height:91px;display:flex;align-items:center;gap:13px;text-align:left;padding:12px 17px;margin-bottom:15px;color:var(--deep);transition:transform .18s,background .18s,box-shadow .18s}#choose .option:nth-of-type(2){background:linear-gradient(95deg,#f1e5fd,#eee6ff)}#choose .option:hover{transform:translateY(-3px);box-shadow:0 11px 20px #986aa424}#choose .option strong{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:-.03em;flex:1}#choose .option .option-icon{font-size:40px}#choose .option .chev{font-size:31px}#choose .hint{margin:18px auto 0;font-size:12px;color:#855b96}
+    #questions{padding-top:125px;justify-content:flex-start}#questions h2{margin:4px 0 6px}#questions .recipient{font-size:12px;color:#855b96;margin:0 0 15px}#questions .form{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px}#questions .question{background:#f7e9f6;border-radius:18px;padding:12px 14px;position:relative}#questions label{display:block;font-weight:800;font-size:12px;color:var(--purple);margin-bottom:8px}#questions input,#questions textarea{background:#fffefd;border:1px solid #d8bce9;color:var(--purple);border-radius:12px;width:100%;padding:11px 13px;outline:none;font-size:13px}#questions textarea{min-height:65px;resize:vertical}#questions input::placeholder,#questions textarea::placeholder{color:#b296bd}#questions .primary{width:100%;margin:6px auto 0}#questions .status{min-height:18px;margin:10px 0 0;font-size:12px;color:#b12352}#questions .back{margin-top:12px}
+    .back{background:none;border:none;text-decoration:underline;text-decoration-color:#a07bb7;color:#825995;font-size:12px}
+    #complete{padding-top:164px}#complete h2{font-size:57px;line-height:1.07}#complete .greeting{margin:28px 0 10px;font-size:17px;font-weight:700}#complete .event-card{background:#efe2fb;border-radius:25px;padding:18px 23px;font-size:15px;font-weight:800;line-height:1.6;max-width:298px;margin:10px 0 17px}#complete .thanks{font-size:14px;line-height:1.55;max-width:260px}#complete .confirm{margin:22px auto 0;background:var(--purple);border-radius:80px;color:white;font-weight:800;padding:14px 25px;display:flex;gap:10px;align-items:center}#complete .check{display:grid;place-items:center;background:white;color:var(--purple);width:23px;height:23px;border-radius:50%}#complete .note{font-size:11px;color:#8f719f;margin-top:14px;max-width:280px;line-height:1.5}
+    .sparkles{display:flex;justify-content:center;gap:16px;color:#f7bf2f;font-size:24px;line-height:1;margin-bottom:12px}
+    .copyright{position:absolute;z-index:5;left:0;right:0;bottom:17px;text-align:center;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#ad89b5;pointer-events:none}
+    @media (max-width:520px){body{padding:0;background:var(--cream)}.app{width:100%;min-height:100svh;border:none;border-radius:0;box-shadow:none}.app:before{inset:5px}.screen{min-height:100svh;padding-left:36px;padding-right:36px}#questions{padding-top:122px}.bunting{height:94px}}
+    @media (max-width:370px){h1{font-size:42px}.screen{padding-left:27px;padding-right:27px}#choose .option strong{font-size:22px}#questions{padding-top:115px}}
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="app" aria-label="Llara and Rizia birthday invitation">
+    <svg class="bunting" viewBox="0 0 480 97" preserveAspectRatio="none" aria-hidden="true"><path d="M-3 0 Q235 79 483 0" fill="none" stroke="#9768ba" stroke-width="2"/><g stroke="#fff" stroke-width="1"><path fill="#9d76eb" d="M8 8 L45 17 17 53Z"/><path fill="#f43f75" d="M51 22 L87 31 60 62Z"/><path fill="#fac5df" d="M95 33 L130 39 103 69Z"/><path fill="#8f69d8" d="M138 41 L176 45 154 75Z"/><path fill="#f43f75" d="M184 47 L223 49 200 81Z"/><path fill="#b18def" d="M232 50 L269 49 254 82Z"/><path fill="#ffcedf" d="M278 50 L314 45 298 78Z"/><path fill="#f43f75" d="M322 43 L361 34 348 70Z"/><path fill="#aa81ed" d="M368 32 L405 23 395 63Z"/><path fill="#f43f75" d="M412 22 L451 9 439 54Z"/></g><g fill="#fff" opacity=".9"><circle cx="24" cy="25" r="2.2"/><circle cx="31" cy="34" r="2"/><circle cx="39" cy="24" r="2"/><path d="M62 32l11 3-10 15-3-1zM197 54l7 1-11 20-5-2zM424 27l6-2 8 19-5 2z"/></g></svg>
+    <div class="balloon red b1" aria-hidden="true"></div><div class="balloon lilac b2" aria-hidden="true"></div><div class="balloon red b3" aria-hidden="true"></div><div class="balloon lilac b4" aria-hidden="true"></div>
+    <div class="scribble s1" aria-hidden="true">〰</div><div class="scribble s2" aria-hidden="true">〰</div><div class="scribble s3" aria-hidden="true">✦</div>
+    <div class="star st1" aria-hidden="true">★</div><div class="star st2" aria-hidden="true">★</div><div class="star st3" aria-hidden="true">✦</div><div class="star st4" aria-hidden="true">✧</div>
+    <svg class="cake cake-top" viewBox="0 0 92 80" aria-hidden="true"><path d="M12 59q29 17 68 0v9q-36 18-68 0z" fill="#f9d44f" stroke="#5a2776" stroke-width="3"/><path d="M14 45q26-11 65 0v16q-31 14-65 0z" fill="#b997f6" stroke="#5a2776" stroke-width="3"/><path d="M13 41q28-13 66 0v9q-9-6-17 2t-15-1q-8-8-15 1-8 8-19-2z" fill="#f74d89" stroke="#5a2776" stroke-width="3"/><path d="M23 38q21-11 46 0" fill="none" stroke="#fff3d6" stroke-width="4" stroke-linecap="round"/><g stroke="#5a2776" stroke-width="2.5"><path d="M30 28V13M45 27V9M60 28V13"/></g><g fill="#ffd14f"><path d="M30 10q-5-6 0-9 5 3 0 9M45 7q-5-6 0-9 5 3 0 9M60 10q-5-6 0-9 5 3 0 9"/></g></svg>
+    <svg class="cake cake-bottom" viewBox="0 0 92 80" aria-hidden="true"><path d="M12 59q29 17 68 0v9q-36 18-68 0z" fill="#f9d44f" stroke="#5a2776" stroke-width="3"/><path d="M14 45q26-11 65 0v16q-31 14-65 0z" fill="#b997f6" stroke="#5a2776" stroke-width="3"/><path d="M13 41q28-13 66 0v9q-9-6-17 2t-15-1q-8-8-15 1-8 8-19-2z" fill="#f74d89" stroke="#5a2776" stroke-width="3"/><path d="M23 38q21-11 46 0" fill="none" stroke="#fff3d6" stroke-width="4" stroke-linecap="round"/><g stroke="#5a2776" stroke-width="2.5"><path d="M30 28V13M45 27V9M60 28V13"/></g><g fill="#ffd14f"><path d="M30 10q-5-6 0-9 5 3 0 9M45 7q-5-6 0-9 5 3 0 9M60 10q-5-6 0-9 5 3 0 9"/></g></svg>
+    <div class="topline" aria-hidden="true">a special invitation</div>
+    <section id="welcome" class="screen active" aria-labelledby="title">
+      <div class="sparkles" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span></div>
+      <h1 id="title">Llara &amp; Rizia<span class="fine">Advanced Birthday<br>Celebration</span></h1>
+      <p class="subtitle">A little early, a lot of love.<br>You're invited to celebrate! ♡</p>
+      <div class="pill-list">
+        <div class="detail"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg><span>Saturday, November 21</span></div>
+        <div class="detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg><span>8:00 PM</span></div>
+        <div class="detail"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1116 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Rockstar Glorietta</span></div>
+      </div>
+      <button class="primary" type="button" data-next="choose">Open your invitation <span class="button-arrow" aria-hidden="true">›</span></button>
+    </section>
+    <section id="choose" class="screen" aria-labelledby="choose-title">
+      <div class="sparkles" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span></div>
+      <h2 id="choose-title">Who are you?</h2>
+      <button type="button" class="option" data-name="Llara"><span class="option-icon" aria-hidden="true">🎂</span><strong>I am Llara</strong><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" class="option" data-name="Rizia"><span class="option-icon" aria-hidden="true">🎂</span><strong>I am Rizia</strong><span class="chev" aria-hidden="true">›</span></button>
+      <p class="hint">✦ Please RSVP for yourself only ✦</p>
+      <button type="button" class="back" data-next="welcome">← Back to invitation</button>
+    </section>
+    <section id="questions" class="screen" aria-labelledby="rsvp-title">
+      <div class="sparkles" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span></div>
+      <h2 id="rsvp-title">Your RSVP</h2>
+      <p class="recipient">Reserved just for <strong id="selected-name">you</strong> ♡</p>
+      <form id="rsvp-form" class="form" novalidate>
+        <div class="question"><label for="q1">01 &nbsp; Question 1 <span style="font-weight:500">[placeholder]</span></label><input name="Question 1" id="q1" required maxlength="500" placeholder="Your answer here..."></div>
+        <div class="question"><label for="q2">02 &nbsp; Question 2 <span style="font-weight:500">[placeholder]</span></label><input name="Question 2" id="q2" required maxlength="500" placeholder="Your answer here..."></div>
+        <div class="question"><label for="q3">03 &nbsp; Question 3 <span style="font-weight:500">[placeholder]</span></label><textarea name="Question 3" id="q3" required maxlength="1200" placeholder="Your answer here..."></textarea></div>
+        <input type="text" name="_honey" id="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+        <button id="submit-btn" class="primary" type="submit">Send my RSVP <span class="button-arrow" aria-hidden="true">♡</span></button>
+      </form>
+      <p class="status" id="form-status" role="alert" aria-live="polite"></p>
+      <button type="button" class="back" data-next="choose">← Choose a different name</button>
+    </section>
+    <section id="complete" class="screen" aria-labelledby="complete-title">
+      <div class="sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+      <h2 id="complete-title">You're<br>invited!</h2>
+      <p class="greeting" id="final-greeting">Yay! Your RSVP is in.</p>
+      <div class="event-card">See you on November 21<br>at 8:00 PM<br>at Rockstar Glorietta!</div>
+      <p class="thanks">We can't wait to celebrate with you. 💗</p>
+      <div class="confirm"><span class="check">✓</span> RSVP submitted</div>
+      <p class="note">Your answers were submitted for email delivery to the event organizers.</p>
+    </section>
+    <div class="copyright">Llara &amp; Rizia · Birthday celebrations</div>
+  </main>
+  <script>
+    (() => {
+      let celebrant = null;
+      const screens = Array.from(document.querySelectorAll('.screen'));
+      const show = (id) => {
+        screens.forEach(s => {s.classList.toggle('active', s.id === id); s.setAttribute('aria-hidden', s.id === id ? 'false' : 'true');});
+        window.scrollTo({top:0,behavior:'instant'});
+      };
+      document.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => show(button.dataset.next)));
+      document.querySelectorAll('[data-name]').forEach(button => button.addEventListener('click', () => {
+        celebrant = button.dataset.name;
+        document.getElementById('selected-name').textContent = celebrant;
+        show('questions');
+      }));
+      const form = document.getElementById('rsvp-form');
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const status = document.getElementById('form-status');
+        const submit = document.getElementById('submit-btn');
+        status.textContent = '';
+        if (!celebrant) {show('choose');return;}
+        if (!form.reportValidity()) return;
+        if (document.getElementById('honeypot').value) return;
+        submit.disabled = true;
+        submit.textContent = 'Sending your RSVP…';
+        const payload = {
+          'Celebrant': celebrant,
+          'Event': 'Llara & Rizia Advanced Birthday Celebration',
+          'Date': 'Saturday, November 21, 2026',
+          'Time': '8:00 PM',
+          'Location': 'Rockstar Glorietta',
+          'Question 1': document.getElementById('q1').value.trim(),
+          'Question 2': document.getElementById('q2').value.trim(),
+          'Question 3': document.getElementById('q3').value.trim(),
+          '_subject': 'Birthday RSVP: ' + celebrant + ' | November 21',
+          '_cc': 'mayoipat@gmail.com',
+          '_template': 'table',
+          '_captcha': 'false'
+        };
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/allensegovia2@gmail.com', {
+            method: 'POST', headers: {'Content-Type':'application/json','Accept':'application/json'},
+            body: JSON.stringify(payload)
+          });
+          if (!response.ok) throw new Error('Server error: ' + response.status);
+          const data = await response.json();
+          if (data.success === false || data.success === 'false' || data.error) throw new Error(data.message || 'Unable to send');
+          document.getElementById('final-greeting').textContent = 'Yay, ' + celebrant + '! Your RSVP is in.';
+          form.reset();
+          show('complete');
+        } catch (error) {
+          status.textContent = 'We couldn\'t send your RSVP yet. Please check your connection and try again. Your answers are still here.';
+          console.error('Birthday RSVP submission error:', error);
+        } finally {
+          submit.disabled = false;
+          submit.innerHTML = 'Send my RSVP <span class="button-arrow" aria-hidden="true">♡</span>';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
