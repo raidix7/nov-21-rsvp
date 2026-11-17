@@ -47,15 +47,49 @@
         button.addEventListener('click', () => show(button.dataset.next))
     );
 
-    document.querySelectorAll('[data-name]').forEach(button =>
+    // document.querySelectorAll('[data-name]').forEach(button =>
+    //     button.addEventListener('click', () => {
+    //         celebrant = button.dataset.name;
+
+    //         document.getElementById('selected-name').textContent = celebrant;
+
+    //         show('questions');
+    //     })
+    // );
+
+    const questionsByName = {
+        Llara: [
+            "Question for Llara 1",
+            "Question for Llara 2",
+            "Question for Llara 3"
+        ],
+
+        Rizia: [
+            "Question for Rizia 1",
+            "Question for Rizia 2",
+            "Question for Rizia 3"
+        ]
+    };
+
+    document.querySelectorAll('[data-name]').forEach(button => {
         button.addEventListener('click', () => {
             celebrant = button.dataset.name;
 
             document.getElementById('selected-name').textContent = celebrant;
 
+            const questions = questionsByName[celebrant];
+
+            document.getElementById('label-q1').textContent = questions[0];
+            document.getElementById('label-q2').textContent = questions[1];
+            document.getElementById('label-q3').textContent = questions[2];
+
+            document.getElementById('rsvp-form').reset();
+
+            document.getElementById('form-status').textContent = '';
+
             show('questions');
-        })
-    );
+        });
+    });
 
     // ==========================================
     // RSVP FORM

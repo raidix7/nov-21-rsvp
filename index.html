@@ -72,8 +72,8 @@
     <div class="topline" aria-hidden="true">a special invitation</div>
     <section id="welcome" class="screen active" aria-labelledby="title">
       <div class="sparkles" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span></div>
-      <h1 id="title">Llara &amp; Rizia<span class="fine">Advanced Birthday<br>Celebration</span></h1>
-      <p class="subtitle">A little early, a lot of love.<br>You're invited to celebrate! ♡</p>
+      <h1 id="title">Llara &amp; Rizia<span class="fine">Birthday<br>Celebration</span></h1>
+      <p class="subtitle">All the love from your besties.<br>You're invited to celebrate! ♡</p>
       <!-- <div class="pill-list">
         <div class="detail"><svg viewBox="0 0 24 24">
             <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -107,23 +107,30 @@
       <p class="recipient">Reserved just for <strong id="selected-name">you</strong> ♡</p>
       <form id="rsvp-form" class="form" novalidate>
 
-        <div class="question"><label for="q1">01 &nbsp; Question 1 <span
-              style="font-weight:500">[placeholder]</span></label><input name="Question 1" id="q1" required
-            maxlength="500" placeholder="Your answer here..."></div>
-        <div class="question"><label for="q2">02 &nbsp; Question 2 <span
-              style="font-weight:500">[placeholder]</span></label><input name="Question 2" id="q2" required
-            maxlength="500" placeholder="Your answer here..."></div>
-        <div class="question"><label for="q3">03 &nbsp; Question 3 <span
-              style="font-weight:500">[placeholder]</span></label><textarea name="Question 3" id="q3" required
-            maxlength="1200" placeholder="Your answer here..."></textarea></div>
         <div class="question">
-          <label for="guest-email">Your Email Address</label>
+          <label id="label-q1" for="q1"></label>
+          <input name="question_1" id="q1" required maxlength="500" placeholder="Your answer here...">
+        </div>
+
+        <div class="question">
+          <label id="label-q2" for="q2"></label>
+          <input name="question_2" id="q2" required maxlength="500" placeholder="Your answer here...">
+        </div>
+
+        <div class="question">
+          <label id="label-q3" for="q3"></label>
+          <textarea name="question_3" id="q3" required maxlength="1200" placeholder="Your answer here..."></textarea>
+        </div>
+
+        <div class="question">
+          <label for="guest-email">Sa aling email gusto mo makita RVSP?</label>
           <input type="email" id="guest-email" name="guest_email" required placeholder="Enter your email address...">
         </div>
+
         <input type="text" name="_honey" id="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true"
           style="position:absolute;left:-9999px;opacity:0">
-        <button id="submit-btn" class="primary" type="submit">Send my RSVP <span class="button-arrow"
-            aria-hidden="true">♡</span></button>
+        <!-- <button id="submit-btn" class="primary" type="submit">Send my RSVP <span class="button-arrow"
+            aria-hidden="true">♡</span></button> -->
       </form>
       <p class="status" id="form-status" role="alert" aria-live="polite"></p>
       <button type="button" class="back" data-next="choose">← Choose a different name</button>
