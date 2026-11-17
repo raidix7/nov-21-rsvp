@@ -59,6 +59,7 @@
 
     const questionsByName = {
         Llara: [
+            // "How did it feel to become a founding member of MSHS's Debate Society?",
             "Question for Llara 1",
             "Question for Llara 2",
             "Question for Llara 3"
