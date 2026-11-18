@@ -382,7 +382,7 @@
 
             if (note) {
                 note.textContent =
-                    'Your confirmation email should be in your inbox ('+ guestEmail +') 🫶 check your spam too; sorry hindi pa legit na legit ang resident programmer 😵‍💫. Mark as "not spam" on my behalf pleaseee thank you <3 (digital souvenir na rin)';
+                    'Your confirmation email should be in your inbox ('+ guestEmail +') 🫶 check your spam too; sorry hindi pa legit na legit ang resident programmer 😵‍💫. Mark as "not spam" on our behalf pleaseee thank you <3 (digital souvenir na rin) \n\nIdea by Pat, Fixes by Allen, Questions by Everybody Else';
             }
 
             form.reset();

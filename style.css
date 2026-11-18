@@ -588,7 +588,8 @@ h2 {
     color: #8f719f;
     margin-top: 14px;
     max-width: 280px;
-    line-height: 1.5
+    line-height: 1.5;
+    white-space: pre-line;
 }
 
 .sparkles {
