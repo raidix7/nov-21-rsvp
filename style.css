@@ -694,3 +694,33 @@ h2 {
     cursor: wait;
     transform: none;
 }
+
+
+.yes-no-choices {
+    display: flex;
+    gap: 12px;
+    margin: 8px 0 12px;
+}
+
+.yes-no-choices button {
+    flex: 1;
+    border: 1px solid #d8bce9;
+    border-radius: 20px;
+    padding: 11px;
+    background: #f7e9f6;
+    color: var(--purple);
+    font-weight: 800;
+    transition: .2s;
+}
+
+.yes-no-choices button.selected {
+    background: var(--purple);
+    color: white;
+    border-color: var(--purple);
+}
+
+#questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}

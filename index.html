@@ -107,20 +107,7 @@
       <p class="recipient">Reserved just for <strong id="selected-name">you</strong> ♡</p>
       <form id="rsvp-form" class="form" novalidate>
 
-        <div class="question">
-          <label id="label-q1" for="q1"></label>
-          <input name="question_1" id="q1" required maxlength="500" placeholder="Your answer here...">
-        </div>
-
-        <div class="question">
-          <label id="label-q2" for="q2"></label>
-          <input name="question_2" id="q2" required maxlength="500" placeholder="Your answer here...">
-        </div>
-
-        <div class="question">
-          <label id="label-q3" for="q3"></label>
-          <textarea name="question_3" id="q3" required maxlength="1200" placeholder="Your answer here..."></textarea>
-        </div>
+        <div id="questions-container"></div>
 
         <div class="question">
           <label for="guest-email">Sa aling email gusto mo makita RSVP?</label>
@@ -144,7 +131,7 @@
       <div class="confirm"><span class="check">✓</span> RSVP submitted</div>
       <p class="note">Your answers were submitted for email delivery to the event organizers.</p>
     </section>
-    <div class="copyright">Llara &amp; Rizia · Birthday celebrations</div>
+    <div class="copyright">para sa kaarawan ng aming mga mabubuting kaibigan 💗💖🫶</div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
